@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calm Care Landing Page
 
-## Getting Started
+A beautiful, conversion-optimized landing page for the Calm Care voice-powered parenting assistant app with integrated Stripe payments.
 
-First, run the development server:
+## Features
+
+- 🎨 Modern, responsive design with Tailwind CSS
+- 💳 Stripe payment integration for $4.99 one-time purchase
+- 📱 Mobile-optimized layout
+- ✨ Smooth animations and hover effects
+- 🔒 Secure payment processing
+- 📧 Customer email collection
+- 🎯 Conversion-focused design with testimonials and features
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set up Stripe
+
+1. Create a [Stripe account](https://dashboard.stripe.com/register)
+2. Get your API keys from the Stripe Dashboard
+3. Copy `.env.example` to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Add your Stripe keys to `.env.local`:
+
+```env
+STRIPE_SECRET_KEY=sk_test_your_actual_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_actual_publishable_key
+NEXT_PUBLIC_DOMAIN=http://localhost:3000
+```
+
+### 3. Update App Store Links
+
+In `src/app/success/page.tsx`, update the download links:
+
+```typescript
+const downloadLinks = {
+  ios: 'https://apps.apple.com/app/calm-care/id123456789', // Your actual App Store link
+  android: 'https://play.google.com/store/apps/details?id=com.calmcarevoice.app', // Your actual Play Store link
+};
+```
+
+### 4. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the landing page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel (Recommended)
 
-## Learn More
+1. Push your code to GitHub
+2. Connect your GitHub repository to [Vercel](https://vercel.com)
+3. Add environment variables in Vercel dashboard
+4. Deploy!
 
-To learn more about Next.js, take a look at the following resources:
+### Other Platforms
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This Next.js app can be deployed to any platform that supports Node.js:
+- Netlify
+- Railway
+- DigitalOcean App Platform
+- AWS Amplify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+### Colors and Branding
+- Update colors in `tailwind.config.js`
+- Replace the microphone icon with your app logo
+- Modify the color scheme in the landing page components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Content
+- Update testimonials in `src/app/page.tsx`
+- Modify features and descriptions
+- Change pricing and product details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Payment Flow
+- Customize success page messaging
+- Add email automation (consider using services like SendGrid)
+- Implement analytics tracking
+
+## Important Notes
+
+- Make sure to use your production Stripe keys for live payments
+- Test payments thoroughly before going live
+- Set up proper error handling and logging
+- Consider adding analytics (Google Analytics, Mixpanel, etc.)
+- Implement proper SEO optimization
+- Add a privacy policy and terms of service
+
+## Support
+
+For questions about the landing page setup, create an issue in this repository.
+
+For Stripe-related questions, refer to the [Stripe documentation](https://stripe.com/docs).
+
+## License
+
+This project is licensed under the MIT License.
