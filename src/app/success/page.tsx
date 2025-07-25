@@ -3,8 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { CheckCircle, Download, Smartphone, Mail } from 'lucide-react';
+import { Suspense } from 'react';
 
-export default function Success() {
+// Add this to prevent static generation
+export const dynamic = 'force-dynamic';
+
+function SuccessContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get('session_id');
   const [customerEmail, setCustomerEmail] = useState('');
@@ -128,5 +132,17 @@ export default function Success() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Success() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center px-4">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   );
 }
