@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ sessionId: session.id });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Stripe error:', err);
     return NextResponse.json(
       { error: 'Error creating checkout session' },

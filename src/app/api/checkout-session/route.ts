@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
       payment_status: session.payment_status,
       amount_total: session.amount_total,
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Error fetching session:', err);
     return NextResponse.json(
       { error: 'Error fetching session details' },

@@ -108,7 +108,7 @@ export default function Success() {
               </li>
               <li className="flex items-start space-x-2">
                 <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-semibold">3</span>
-                <span>Set up your baby's profile and start using voice commands!</span>
+                <span>Set up your baby&apos;s profile and start using voice commands!</span>
               </li>
             </ol>
           </div>

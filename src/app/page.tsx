@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mic, Baby, Clock, Heart, Smartphone, Check, Star, ArrowRight } from 'lucide-react';
+import { Mic, Baby, Clock, Heart, Check, Star, ArrowRight } from 'lucide-react';
 import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
@@ -111,7 +111,7 @@ export default function Home() {
                 Made Simple
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Track your baby's feeding, sleep, and diaper changes using just your voice. 
+                Track your baby&apos;s feeding, sleep, and diaper changes using just your voice.
                 Perfect for busy parents who need their hands free.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -152,7 +152,7 @@ export default function Home() {
               <div className="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                 <div className="bg-blue-600 rounded-lg p-6 text-center mb-6">
                   <Mic className="w-12 h-12 text-white mx-auto mb-4" />
-                  <div className="text-white text-lg font-semibold">"Log a 4 ounce bottle"</div>
+                  <div className="text-white text-lg font-semibold">&ldquo;Log a 4 ounce bottle&rdquo;</div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between bg-green-50 p-3 rounded-lg">
@@ -211,7 +211,7 @@ export default function Home() {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.content}"</p>
+                <p className="text-gray-700 mb-4">&ldquo;{testimonial.content}&rdquo;</p>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.role}</div>
